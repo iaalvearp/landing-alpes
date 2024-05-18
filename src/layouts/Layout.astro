@@ -25,4 +25,37 @@ const { title } = Astro.props;
 		--text: rgb(225, 240, 251);
 		--cristal: var(--bg)/0.4;
 	}
+	h1, h2, h3 {
+		text-wrap: balance;
+	}
+	p {
+		text-wrap: pretty;
+	}
+	@font-face {
+		font-family: 'font-sans';
+		src: url('/fonts/Monse.ttf') format('truetype');
+		font-family: 'font-handwriting';
+		src: url('/fonts/Winter.otf') format('truetype');
+		font-family: 'font-serif';
+		src: url('/fonts/Italiana.ttf') format('truetype');
+	}
+	.handwriting {
+		font-family: 'font-handwriting';
+	}
+	.scroll-fade-in {
+		animation: reveal linear both;
+		animation-timeline: view();
+		animation-range: entry 20% cover 35%;
+	}
+	@keyframes reveal {
+		from {
+			opacity: 0;
+			transform: translateY(5rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0rem);
+		}
+	}
+
 </style>
