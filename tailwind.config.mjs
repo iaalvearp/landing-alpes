@@ -6,9 +6,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				custom: ["font-sans", "open sans"],
-				custom: ["font-handwriting", "sans-serif"],
-				custom: ["font-serif", "sans-serif"],
+				sans: ['font-sans', 'sans-serif'],
+				handwriting: ['font-handwriting', 'sans-serif'],
+				serif: ['font-serif', 'serif'],
 			},
 		},
 	},
