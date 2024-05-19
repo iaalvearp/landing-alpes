@@ -15,15 +15,22 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body >
 		<slot />
 	</body>
 </html>
 <style is:global>
 	:root {
-		--bg: rgb(36, 36, 34);
-		--text: rgb(225, 240, 251);
-		--cristal: var(--bg)/0.6;
+		--var-cristal: 0.6;
+		--rgb-bg: 36, 36, 36;
+		--rgb-text: 225, 240, 251;
+		--bg: rgb(var(--rgb-bg));
+		--text: rgb(var(--rgb-text));
+		--cristal: rgba(var(--rgb-bg), var(--var-cristal));
+		--cristal-text: rgba(var(--rgb-text), 0.7);
+	}
+	html {
+		scroll-behavior: smooth;
 	}
 	h1, h2, h3 {
 		text-wrap: balance;

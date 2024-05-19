@@ -3,12 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import NavBar from '../components/NavBar.astro';
 import Header from '@/components/Header.astro';
 import BtnMenu from '@/components/BtnMenu.astro';
+import Services from '@/components/Services.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="min-h-dvh">
+	<main id="home" class="relative min-h-dvh bg-[var(--bg)]">
 		<NavBar />
 		<Header />
+		<Services />
 		<BtnMenu />
 	</main>
 </Layout>
