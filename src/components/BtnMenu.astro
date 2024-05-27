@@ -11,13 +11,15 @@
 	const openMenu = () => {
 		btnOpen.style.transform = "scale(0)"
 		btnClose.style.transform = "scale(1)"
-		menu.style.transform = "translate(0, 0)"
+		menu.style.transform = "translate(0, 0) scale(1)"
+		menu.style.opacity = "1"
 	}
 	
 	const closeMenu = () => {
 		btnOpen.style.transform = "scale(1)"
 		btnClose.style.transform = "scale(0)"
-		menu.style.transform = "translate(150%, 150%)"
+		menu.style.transform = "translate(150%, 150%) scale(0)"
+		menu.style.opacity = "0"
 	}
 
 	menuLinks.forEach(a => a.addEventListener('click', closeMenu))
