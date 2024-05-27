@@ -21,13 +21,14 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--var-cristal: 0.6;
 		--rgb-bg: 36, 36, 36;
 		--rgb-text: 225, 240, 251;
 		--bg: rgb(var(--rgb-bg));
 		--text: rgb(var(--rgb-text));
-		--cristal: rgba(var(--rgb-bg), var(--var-cristal));
+		--cristal: rgba(var(--rgb-bg), 0.85);
 		--cristal-text: rgba(var(--rgb-text), 0.7);
+		--text-full: rgb(255, 255, 255);
+		--bg-full: rgb(0, 0, 0);
 	}
 	html {
 		scroll-behavior: smooth;
@@ -52,8 +53,22 @@ const { title } = Astro.props;
 		font-family: 'font-serif';
 		src: url('/fonts/Italiana.ttf') format('truetype');
 	}
+	@font-face {
+		font-family: 'two-serif';
+		src: url('/fonts/GloRe.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'two-sans';
+		src: url('/fonts/PoRe.ttf') format('truetype');
+	}
 	.handwriting {
 		font-family: 'font-handwriting';
+	}
+	.twoSerif {
+		font-family: 'two-serif';
+	}
+	.twoSans {
+		font-family: 'two-sans';
 	}
 	.scroll-fade-in {
 		animation: reveal linear both;
@@ -62,7 +77,7 @@ const { title } = Astro.props;
 	}
 	.cristal {
 		background-color: var(--cristal);
-		backdrop-filter: blur(0.25rem);
+		backdrop-filter: blur(6px);
 	}
 	@keyframes reveal {
 		from {
@@ -79,6 +94,16 @@ const { title } = Astro.props;
 	}
 	.rotX {
 		transform: rotateX(180deg);
+	}
+
+	.spacing {
+		letter-spacing: .125rem;
+	}
+
+	@media (width >= 48rem) {
+		.spacing {
+			letter-spacing: .25rem;
+		}
 	}
 
 </style>

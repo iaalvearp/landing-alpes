@@ -9,6 +9,8 @@ export default {
 				sans: ['font-sans', 'sans-serif'],
 				handwriting: ['font-handwriting', 'sans-serif'],
 				serif: ['font-serif', 'serif'],
+				twoSerif: ['two-serif', 'serif'],
+				twoSans: ['two-sans', 'sans'],
 			},
 		},
 	},
