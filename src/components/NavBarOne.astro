@@ -1,0 +1,23 @@
+---
+import Favicon from "./Favicon.astro"
+import ItemNavOne from "./ItemNavOne.astro"
+---
+
+<nav class="flex flex-row-reverse md:flex-row justify-between w-full h-20 bg-transparent text-[var(--text)] px-[5%] absolute z-50">
+    <picture class="h-full py-4 flex items-center text-[var(--text-full)]">
+        <Favicon />
+        <span class="font-handwriting text-6xl cursor-default">lpes</span>
+    </picture>
+    <ul id="menu" class="fontSans font-medium h-full min-w-max hidden md:flex items-center justify-center py-4 gap-4">
+        <ItemNavOne 
+        text="Inicio"
+        href="#home"/>
+        <ItemNavOne 
+        text="Servicios"
+        href="#services"/>
+        <ItemNavOne 
+        text="Contacto"
+        href="#contact"/>
+    </ul>
+</nav>
+
