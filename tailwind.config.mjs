@@ -12,6 +12,10 @@ export default {
 				twoSerif: ['two-serif', 'serif'],
 				twoSans: ['two-sans', 'sans'],
 			},
+			colors: {
+				'primary': '#333',
+				'secondary': '#DDD'
+			}
 		},
 	},
 	plugins: [animations],

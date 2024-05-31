@@ -12,15 +12,23 @@ import HeaderOne from '@/components/HeaderOne.astro';
 import ServicesOne from '@/components/ServicesOne.astro';
 import ContactOne from '@/components/ContactOne.astro';
 import SocialMediaFloat from '@/components/SocialMediaFloat.astro';
+import NavBarTwo from '@/components/NavBarTwo.astro';
+import HeaderTwo from '@/components/HeaderTwo.astro';
 ---
 
 <Layout title="Alpes Agency" description="Agencia dedicada a la creación de páginas web, landinp pages, invitaciones de bodas web, etc.">
-	<main id="home" class="relative min-h-dvh bg-[var(--bg)]">
-		<NavBarOne />
-		<HeaderOne />
-		<ServicesOne />
-		<ContactOne />
+	<NavBarTwo />
+	<main id="home" class="snap-y snap-mandatory relative w-full min-h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
+		<div class="snap-center">
+			<HeaderTwo />
+		</div>
+		<div class="snap-center">
+			<ServicesOne />
+		</div>
+		<div class="snap-center">
+			<ContactOne />
+		</div>
 		<SocialMediaFloat />
-		<Footer />
 	</main>
+	<Footer />
 </Layout>
