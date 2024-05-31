@@ -7,8 +7,28 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
+<script>
+	const colorSchemePreference = () => {
+		const isDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+		const applyTheme = e => {
+			if (e) { 
+				document.documentElement.classList.add('dark') 
+			} else { 
+				document.documentElement.classList.remove('dark')
+			}
+		};
+
+		applyTheme(isDark);
+
+		isDark.addEventListener('change', applyTheme);
+	}
+
+	document.addEventListener('DOMContentLoaded', colorSchemePreference)
+</script>
+
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -131,5 +151,4 @@ const { title, description } = Astro.props;
 			position: unset;
 		}
 	}
-
 </style>

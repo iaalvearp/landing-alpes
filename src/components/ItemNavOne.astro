@@ -8,16 +8,13 @@ const { text, href } = Astro.props;
 ---
 
 
-<li class="overflow-hidden h-full w-full md:w-max grid items-center text-center grid-cols-1 grid-rows-1 md:shadow-[1px_1px_0px_var(--golden)] duration-300 hover:shadow-[5px_5px_0px] hover:shadow-secondary hover:border-r hover:border-b hover:border-primary">
-    <span class="bg-[var(--golden)] col-start-1 col-end-2 row-start-1 row-end-2 translate-x-[120%] duration-300 w-full h-full z-0"></span>
-    <a class="block text-3xl md:text-base min-w-max py-2 px-6 lg:py-3 lg:px-8 col-start-1 col-end-2 row-start-1 row-end-2 z-10 duration-300" href={href}>{text}</a>
+<li class="overflow-hidden h-full w-full md:w-max grid items-center text-center grid-cols-1 grid-rows-1 md:shadow-[1px_1px_0px] md:shadow-gold-dark dark:md:shadow-[1px_1px_0px] dark:md:shadow-gold-light duration-300 hover:shadow-[5px_5px_0px] hover:shadow-secondary dark:hover:shadow-primary hover:border-r hover:border-b hover:border-primary dark:hover:border-secondary">
+    <span class=" bg-gold-dark dark:bg-gold-light col-start-1 col-end-2 row-start-1 row-end-2 translate-x-[120%] duration-300 w-full h-full z-0"></span>
+    <a class="block text-3xl text-secondary dark:text-primary hover:text-primary dark:hover:text-secondary md:text-base min-w-max py-2 px-6 lg:py-3 lg:px-8 col-start-1 col-end-2 row-start-1 row-end-2 z-10 duration-300" href={href}>{text}</a>
 </li>
 
 <style>
     li:hover span {
         transform: translateX(0);
-    }
-    li:hover a {
-        color: var(--bg);
     }
 </style>
