@@ -1,9 +1,13 @@
 ---
+interface Props {
+    id: string,
+}
 
+const { id } = Astro.props;
 ---
 
-<header class="h-screen bg-primary relative overflow-hidden">
-    <div class="absolute w-max h-full grid place-content-center mx-auto lg:mx-0 gap-10 left-[5%] top-[-15%] bottom-0 text-left inset-0">
+<header id={ id } class="h-screen bg-primary relative overflow-hidden">
+    <div class="absolute w-max h-full grid place-content-center mx-auto lg:mx-0 gap-10 left-[5%] top-[-15%] lg:top-0 bottom-0 text-left inset-0">
         <h1 class="spacing w-3/4 animate-slide-out-bottom text-center mx-auto lg:mx-0 animate-delay-500 grid">
             <b class="twoSerif text-6xl md:text-8xl text-[var(--golden)]">Alpes</b>
             <span class="twoSans text-secondary text-xl md:text-3xl lg:text-4xl text-end">Agency</span>

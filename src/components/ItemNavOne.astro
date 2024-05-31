@@ -8,9 +8,9 @@ const { text, href } = Astro.props;
 ---
 
 
-<li class="overflow-hidden h-full w-max grid items-center text-center grid-cols-1 grid-rows-1 shadow-[1px_1px_0px_var(--golden)] duration-500 hover:shadow-[5px_5px_8px_var(--bg-full)]">
-    <span class="bg-[var(--golden)] col-start-1 col-end-2 row-start-1 row-end-2 translate-x-full duration-500 w-full h-full z-0"></span>
-    <a class="block min-w-max py-2 px-6 lg:py-3 lg:px-8 col-start-1 col-end-2 row-start-1 row-end-2 z-20 duration-500" href={href}>{text}</a>
+<li class="overflow-hidden h-full w-full md:w-max grid items-center text-center grid-cols-1 grid-rows-1 md:shadow-[1px_1px_0px_var(--golden)] duration-300 hover:shadow-[5px_5px_0px] hover:shadow-secondary hover:border-r hover:border-b hover:border-primary">
+    <span class="bg-[var(--golden)] col-start-1 col-end-2 row-start-1 row-end-2 translate-x-[120%] duration-300 w-full h-full z-0"></span>
+    <a class="block text-3xl md:text-base min-w-max py-2 px-6 lg:py-3 lg:px-8 col-start-1 col-end-2 row-start-1 row-end-2 z-10 duration-300" href={href}>{text}</a>
 </li>
 
 <style>

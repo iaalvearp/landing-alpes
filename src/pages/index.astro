@@ -18,12 +18,14 @@ import HeaderTwo from '@/components/HeaderTwo.astro';
 
 <Layout title="Alpes Agency" description="Agencia dedicada a la creación de páginas web, landinp pages, invitaciones de bodas web, etc.">
 	<NavBarTwo />
-	<main id="home" class="snap-y snap-mandatory relative w-full min-h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
 		<div class="snap-center">
-			<HeaderTwo />
+			<HeaderTwo 
+			id='home'/>
 		</div>
 		<div class="snap-center">
-			<ServicesOne />
+			<ServicesOne 
+			id='services'/>
 		</div>
 		<div class="snap-center">
 			<ContactOne />

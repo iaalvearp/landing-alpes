@@ -43,6 +43,7 @@ const { title, description } = Astro.props;
 		text-wrap: pretty;
 		font-size: clamp(1.12rem,1vw,1.6rem);
 	}
+	
 	@font-face {
 		font-family: 'font-sans';
 		src: url('/fonts/Monse.ttf') format('truetype');
@@ -125,6 +126,9 @@ const { title, description } = Astro.props;
 	@media (width >= 48rem) {
 		.spacing {
 			letter-spacing: 2px;
+		}
+		.unset {
+			position: unset;
 		}
 	}
 

@@ -1,0 +1,19 @@
+---
+interface Props {
+    id: string,
+}
+
+const { id } = Astro.props;
+---
+
+<section id={ id } class="h-screen w-full bg-primary overflow-hidden">
+    <div>
+        <div>
+            <img src="/img/iphones.png" alt="">
+        </div>
+        <div class="text-secondary">
+            <h2 class="text-center">Diseño Responsive (Móvil)</h2>
+            <p class="text-left">Un diseño responsive asegura que las páginas web se vean y funcionen bien en todos los dispositivos, incluyendo móviles, tabletas y computadoras de escritorio. Esto es crucial porque un número creciente de usuarios accede a Internet desde dispositivos móviles.</p>
+        </div>
+    </div>
+</section>

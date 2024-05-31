@@ -1,0 +1,60 @@
+---
+import Favicon from "./Favicon.astro"
+import ItemNavOne from "./ItemNavOne.astro"
+import ToggleBtn from "./ToggleBtn.astro"
+---
+
+<nav class="flex items-center justify-between w-full h-20 bg-primary text-secondary px-[5%] absolute border-b border-secondary/20 z-50">
+    <picture class="h-full py-4 flex items-center text-secondary">
+        <Favicon />
+        <span class="font-handwriting text-6xl cursor-default">lpes</span>
+    </picture>
+    <ToggleBtn />
+    <ul id="menu" class="fontSans unset font-medium h-[calc(100vh_-_5rem)] md:h-full bg-primary/30 backdrop-blur-sm overflow-hidden top-20 w-full left-0 right-0 md:min-w-max absolute grid place-content-center md:flex md:flex-row items-center justify-center md:justify-end md:py-4 gap-4 z-50">
+        <ItemNavOne 
+        text="Inicio"
+        href="#home"/>
+        <ItemNavOne 
+        text="Servicios"
+        href="#services"/>
+        <ItemNavOne 
+        text="Contacto"
+        href="#contact"/>
+    </ul>
+</nav>
+
+<style>
+    #menu {
+        transform: translateY(-150%);
+        transition: transform 500ms ease-in-out;
+    }
+</style>
+
+<script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const menu = document.getElementById('menu');
+    const barUp = document.getElementById('barUp');
+    const barDown = document.getElementById('barDown');
+    const links = document.querySelectorAll('ul li a')
+
+    const openMenu = () => {
+        menu.style.transform = 'translateY(0)'
+        barUp.style.transform = 'rotate(45deg) translate(20%, 120%)'
+        barDown.style.transform = 'rotate(-45deg) translate(15%, -120%)'
+    }
+
+    const closeMenu = () => {
+        menu.style.transform = 'translateY(-150%)'
+        barUp.style.transform = 'rotate(0deg) translate(0px)'
+        barDown.style.transform = 'rotate(0deg) translate(0px)'
+    }
+
+    
+    toggleBtn.addEventListener('click', () => {
+        if (barUp.style.transform == 'rotate(0deg) translate(0px)') { openMenu() }
+        else { closeMenu() }
+    })
+
+    links.forEach(link => link.addEventListener('click', closeMenu))
+</script>
+
