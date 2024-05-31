@@ -10,7 +10,7 @@ import ToggleBtn from "./ToggleBtn.astro"
         <span class="font-handwriting text-6xl cursor-default">lpes</span>
     </picture>
     <ToggleBtn />
-    <ul id="menu" class="fontSans unset font-medium h-[calc(100vh_-_5rem)] md:h-full bg-primary/30 backdrop-blur-sm overflow-hidden top-20 w-full left-0 right-0 md:min-w-max absolute grid place-content-center md:flex md:flex-row items-center justify-center md:justify-end md:py-4 gap-4 z-50">
+    <ul id="menu" class="fontSans unset font-medium h-[calc(100vh_-_5rem)] md:h-full bg-primary/50 backdrop-blur-sm top-20 w-full left-0 right-0 md:min-w-max absolute grid place-content-center md:flex md:flex-row items-center justify-center md:justify-end md:py-4 gap-4 z-50">
         <ItemNavOne 
         text="Inicio"
         href="#home"/>
@@ -27,6 +27,12 @@ import ToggleBtn from "./ToggleBtn.astro"
     #menu {
         transform: translateY(-150%);
         transition: transform 500ms ease-in-out;
+    }
+
+    @media (width >= 768px) {
+        #menu {
+            transform: translateY(0);
+        }
     }
 </style>
 
@@ -54,7 +60,11 @@ import ToggleBtn from "./ToggleBtn.astro"
         if (barUp.style.transform == 'rotate(0deg) translate(0px)') { openMenu() }
         else { closeMenu() }
     })
+    if (document.documentElement.clientWidth <= 768) {
+        links.forEach(link => link.addEventListener('click', closeMenu))
+    } else {
+        menu.style.transform = 'translateY(0)'
+    }
 
-    links.forEach(link => link.addEventListener('click', closeMenu))
 </script>
 
