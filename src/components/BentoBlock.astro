@@ -1,0 +1,26 @@
+---
+import BtnSeeMore from './BtnSeeMore.astro';
+
+interface Props {
+    src: string,
+    alt: string,
+    title: string,
+    text: string,
+    href: string,
+    class?: string
+}
+
+const { src, alt, title, text, href } = Astro.props;
+---
+
+<article class=`${Astro.props.class}`>
+    <img src={src} alt={alt}>
+    <div>
+        <h2>{title}</h2>
+        <p>{text}</p>
+        <BtnSeeMore 
+        class=''
+        href={href}
+        text='Ver más...'/>
+    </div>
+</article>

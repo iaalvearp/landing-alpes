@@ -1,0 +1,21 @@
+---
+import BentoBlock from './BentoBlock.astro';
+
+interface Props {
+    id: string,
+}
+
+const { id } = Astro.props;
+---
+
+
+<section id={id} class="min-h-screen relative w-full max-w-7xl mx-auto grid bg-primary dark:bg-secondary">
+    <BentoBlock
+    class='' 
+    src=''
+    alt=''
+    title=''
+    text=''
+    href=''/>
+
+</section>

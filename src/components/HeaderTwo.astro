@@ -6,16 +6,16 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<header id={ id } class="h-screen w-[90%] max-w-7xl mx-auto relative bg-primary dark:bg-secondary">
-    <div class="absolute h-full grid place-content-center mx-auto lg:mx-0 gap-10 lg:left-[15%] top-[-15%] lg:m-0 lg:top-0 bottom-0 text-left inset-0 lg:inset-auto lg:fixed z-0">
-        <h1 class="spacing w-3/4 animate-slide-out-bottom text-center mx-auto lg:mx-0 animate-delay-500 grid">
+<header id={ id } class="h-screen w-[90%] max-w-7xl mx-auto relative bg-primary dark:bg-secondary top-0">
+    <div class="absolute h-[calc(100%_-_5rem)] lg:fixed grid justify-center lg:justify-start content-center lg:mx-0 gap-8 top-[-15%] lg:m-0 lg:top-0 bottom-0 text-left inset-0 lg:inset-auto z-0">
+        <h1 class="spacing w-3/4 lg:sticky animate-slide-out-bottom text-center mx-auto lg:mx-0 animate-delay-500 grid">
             <b class="twoSerif text-6xl md:text-8xl text-gold-dark dark:text-gold-light">Alpes</b>
             <span class="twoSans text-secondary dark:text-primary text-xl md:text-3xl lg:text-4xl text-end">Agency</span>
         </h1>
-        <div class="flex flex-col md:flex-row">
+        <div class="flex flex-col md:flex-row lg:sticky">
             <p class="spacing fontSans text-secondary dark:text-primary animate-slide-in-bottom animate-delay-500 text-lg md:text-center md:text-xl">No es sólo una <b class="twoSans text-2xl text-gold-dark dark:text-gold-light">web</b>, </p>
             <p class="spacing fontSans text-secondary dark:text-primary animate-slide-in-bottom animate-delay-500 text-lg md:text-center md:text-xl md:ml-1"> es tu <b class="twoSans text-2xl text-gold-dark dark:text-gold-light">marca</b>.</p>
         </div>
     </div>
-    <img class="h-full w-full absolute object-contain right-[-35%] bottom-[-25%] z-10" src="/img/hero-bg.webp" alt="">
+    <img class="h-full w-full absolute object-contain right-[-35%] bottom-[-35%] md:bottom-[-25%] z-10" src="/img/hero-bg.webp" alt="Web desktop wedding invitation">
 </header>
