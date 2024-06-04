@@ -5,22 +5,24 @@ import ItemNavOne from "./ItemNavOne.astro"
 import ToggleBtn from "./ToggleBtn.astro"
 ---
 
-<nav class="flex items-center justify-between w-full h-20 bg-primary dark:bg-secondary text-secondary dark:text-primary px-[5%] absolute border-b border-secondary/30 dark:border-primary/30 z-50">
-    <picture class="h-full flex items-center text-secondary dark:text-primary">
-        <AlpesLogo class="h-full max-w-12" />
-    </picture>
-    <ToggleBtn />
-    <ul id="menu" class="fontSans unset absolute font-medium h-[calc(100vh_-_5rem)] md:h-full bg-primary/50 dark:bg-secondary/50 backdrop-blur-sm top-20 w-full left-0 right-0 md:min-w-max grid place-content-center md:flex md:flex-row items-center justify-center md:justify-end md:py-4 gap-4 z-50">
-        <ItemNavOne 
-        text="Inicio"
-        href="#home"/>
-        <ItemNavOne 
-        text="Servicios"
-        href="#services"/>
-        <ItemNavOne 
-        text="Contacto"
-        href="#contact"/>
-    </ul>
+<nav class="w-full px-[5%] absolute bg-primary dark:bg-secondary text-secondary dark:text-primary border-b border-secondary/30 dark:border-primary/30 z-50">
+    <div class="flex items-center justify-between w-full max-w-7xl mx-auto h-20">
+        <picture class="h-full flex items-center py-2 text-secondary dark:text-primary">
+            <AlpesLogo class="h-full left-0" />
+        </picture>
+        <ToggleBtn />
+        <ul id="menu" class="fontSans unset absolute font-medium h-[calc(100vh_-_5rem)] md:h-full bg-primary/50 dark:bg-secondary/50 backdrop-blur-sm top-20 w-full left-0 right-0 md:min-w-max grid place-content-center md:flex md:flex-row items-center justify-center md:justify-end md:py-4 gap-4 z-50">
+            <ItemNavOne 
+            text="Inicio"
+            href="#home"/>
+            <ItemNavOne 
+            text="Servicios"
+            href="#services"/>
+            <ItemNavOne 
+            text="Contacto"
+            href="#contact"/>
+        </ul>
+    </div>
 </nav>
 
 <style>
@@ -58,10 +60,19 @@ import ToggleBtn from "./ToggleBtn.astro"
         toggleBtn.classList.add('close');
     };
 
+    const widthChecker = () => {
+        setTimeout(() => {
+            if (window.innerWidth >= 768)
+            {
+                menu.style.transform = 'translateY(0)'
+            }
+        }, 100);
+    }
     
     toggleBtn.addEventListener('click', () => {
         if (toggleBtn.classList.contains('close')) { openMenu(); }
         else { closeMenu() };
+        widthChecker()
     });
     
     if (window.innerWidth < 768) 
@@ -71,6 +82,7 @@ import ToggleBtn from "./ToggleBtn.astro"
     {
         menu.style.transform = 'translateY(0)'
     }
+
 
 </script>
 
