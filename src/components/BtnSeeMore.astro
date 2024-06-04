@@ -1,0 +1,15 @@
+---
+interface Props {
+    href: string,
+    text: string,
+    class?: string
+}
+
+const { href, text } = Astro.props;
+---
+
+
+
+<a class=`${Astro.props.class} block py-2 px-4 bg-gold-dark dark:bg-gold-light hover:bg-primary dark:hover:bg-secondary md:shadow-[0px_0px_0px] md:shadow-gold-dark dark:md:shadow-[0px_0px_0px] dark:md:shadow-gold-light duration-300 hover:shadow-[5px_5px_0px] hover:shadow-gold-dark hover:dark:shadow-gold-light border-l hover:border-l border-t hover:border-t border-transparent hover:border-gold-dark dark:hover:border-gold-light` href={href}>
+    {text}
+</a>

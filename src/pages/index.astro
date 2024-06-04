@@ -18,19 +18,13 @@ import HeaderTwo from '@/components/HeaderTwo.astro';
 
 <Layout title="Alpes Agency" description="Agencia dedicada a la creación de páginas web, landinp pages, invitaciones de bodas web, etc.">
 	<NavBarTwo />
-	<main class="w-full h-screen relative bg-primary dark:bg-secondary snap-y snap-mandatory duration-300 overflow-y-auto overflow-x-hidden scroll-smooth">
-		<div class="snap-center">
+	<main class="w-full h-screen relative bg-primary dark:bg-secondary overflow-x-hidden scroll-smooth">
 			<HeaderTwo 
 			id='home'/>
-		</div>
-		<div class="snap-center">
 			<ServicesOne 
 			id='services'/>
-		</div>
-		<div class="snap-center">
 			<ContactOne />
-		</div>
-		<SocialMediaFloat />
+			<SocialMediaFloat />
 	</main>
 	<Footer />
 </Layout>

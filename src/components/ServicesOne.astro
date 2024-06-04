@@ -1,4 +1,6 @@
 ---
+import BtnSeeMore from './BtnSeeMore.astro';
+
 interface Props {
     id: string,
 }
@@ -9,11 +11,14 @@ const { id } = Astro.props;
 <section id={ id } class="h-screen w-full max-w-7xl mx-auto relative bg-primary dark:bg-secondary overflow-hidden grid place-content-center">
     <div class="w-[90%] h-4/5 relative m-auto flex flex-col lg:flex-row">
         <div class="h-3/5 lg:w-2/5 lg:h-full">
-            <img class="h-full mx-auto" src="/img/iphones.png" alt="">
+            <img class="h-full lg:w-full lg:h-auto mx-auto" src="/img/iphones.png" alt="">
         </div>
         <div class="h-2/5 lg:w-3/5 lg:h-full lg:grid lg:place-content-center">
-            <h2 class="w-3/4 mx-auto text-gold-dark dark:text-gold-light twoSerif text-center text-2xl mb-6">Diseño Responsive ( Móvil )</h2>
+            <h2 class="w-3/4 mx-auto text-gold-dark dark:text-gold-light twoSerif text-center text-2xl lg:text-left lg:w-full mb-6">Diseño Responsive ( Móvil )</h2>
             <p class="text-secondary dark:text-primary text-left">Un diseño responsive asegura que las páginas web se vean y funcionen bien en todos los dispositivos, incluyendo móviles, tabletas y computadoras de escritorio.</p>
+            <BtnSeeMore class="text-primary dark:text-secondary hover:text-gold-dark hover:dark:text-gold-light text-center md:max-w-max mt-4 font-twoSans text-lg md:text-xl"
+            href='#'
+            text='Ver mas...' />
         </div>
     </div>
 </section>
