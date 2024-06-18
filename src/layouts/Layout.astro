@@ -1,4 +1,7 @@
 ---
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/sedan-sc';
 interface Props {
 	title: string;
 	description: string;
@@ -40,3 +43,34 @@ const { title, description } = Astro.props;
 		<slot />
 	</body>
 </html>
+
+<style>
+	:root {
+		--text-font: 'Poppins', sans-serif;
+		--title-font: 'Sedan SC', serif;
+		--size-text: 0.75rem;
+		--size-text-desk: 1rem;
+		--size-medium: 1rem;
+		--size-medium-desk: 1.25rem;
+		--size-title: 1.25rem;
+		--size-title-desk: 1.5rem;
+		--primary: rgb(255, 255, 255);
+		--secondary: rgb(34, 34 ,34);
+		--gold: rgb(168, 123, 5);
+		--overlay: rgba(255, 255, 255, 0.3);
+		--overlay-strong: rgba(255, 255, 255, 0.6);
+		--overlay-dark: rgba(34, 34, 34, 0.3);
+	}
+
+
+	@media(prefers-color-scheme:dark) {
+		:root {
+			--primary: rgb(34, 34 ,34);
+			--secondary: rgb(255, 255, 255);
+			--gold: rgb(239, 184, 16);
+			--overlay: rgba(34, 34, 34, 0.3);
+			--overlay-strong: rgba(34, 34, 34, 0.6);
+		}
+	}
+
+</style>
