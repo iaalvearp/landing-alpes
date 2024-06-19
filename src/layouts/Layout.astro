@@ -44,10 +44,10 @@ const { title, description } = Astro.props;
 	</body>
 </html>
 
-<style>
+<style is:global>
 	:root {
-		--text-font: 'Poppins', sans-serif;
-		--title-font: 'Sedan SC', serif;
+		--text-font: 'Poppins';
+		--title-font: 'Sedan SC';
 		--size-text: 0.75rem;
 		--size-text-desk: 1rem;
 		--size-medium: 1rem;
@@ -60,6 +60,37 @@ const { title, description } = Astro.props;
 		--overlay: rgba(255, 255, 255, 0.3);
 		--overlay-strong: rgba(255, 255, 255, 0.6);
 		--overlay-dark: rgba(34, 34, 34, 0.3);
+		--text-secondary: rgba(34, 34, 34, 0.7);
+	}
+
+	.title {
+		font-family: var(--title-font), serif;
+		font-size: 1.25rem;
+		color: var(--secondary);
+		text-wrap: balance
+	}
+
+	.text-font {
+		font-family: var(--text-font), sans-serif;
+		font-size: 0.75rem;
+		text-wrap: pretty;
+	}
+
+	.btn-font {
+		font-family: var(--text-font), sans-serif;
+		font-size: 1rem;
+	}
+
+	@media (width >= 768px) {
+		.title {
+			font-size: 1.5rem;
+		}
+		.text-font {
+			font-size: 1rem;
+		}
+		.btn-font {
+			font-size: 1.25rem;
+		}
 	}
 
 
@@ -70,6 +101,7 @@ const { title, description } = Astro.props;
 			--gold: rgb(239, 184, 16);
 			--overlay: rgba(34, 34, 34, 0.3);
 			--overlay-strong: rgba(34, 34, 34, 0.6);
+			--text-secondary: rgba(255, 255, 255, 0.7);
 		}
 	}
 

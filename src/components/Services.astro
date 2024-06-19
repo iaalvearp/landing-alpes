@@ -1,0 +1,50 @@
+---
+import ServiceCard from "@/ui_complements/Service-Card.astro";
+import IcoPersonalizacion from "@/ui_complements/Ico-personalizacion.astro";
+import IcoAccesibilidad from "@/ui_complements/Ico-accesibilidad.astro";
+import IcoHosting from "@/ui_complements/Ico-hosting.astro";
+import IcoResponsive from "@/ui_complements/Ico-responsive.astro";
+import IcoSeo from "@/ui_complements/Ico-seo.astro";
+import IcoVelocidad from "@/ui_complements/Ico-velocidad.astro";
+
+---
+
+<section class="relative lg:top-32 w-full max-w-[1080px] h-full bg-[var(--primary)] text-[var(--secondary)] py-8 px-0 md:px-8 lg:mx-auto gap-y-8 gap-x-6 z-30" >
+    <ServiceCard
+    title="Web personalizable"
+    text="Soluciones a medida permite satisfacer las necesidades específicas de cada cliente.">
+        <IcoPersonalizacion class="w-full" />
+    </ServiceCard>
+    <ServiceCard
+    title="Diseño responsivo"
+    text="Nos aseguramos que tu web funcione correctamente en todos los dispositivos.">
+        <IcoResponsive class="w-full" />
+    </ServiceCard>
+    <ServiceCard
+    title="SEO"
+    text="Aumentamos el tráfico orgánico al sitio web mejorando la visibilidad en los motores de búsqueda. ">
+        <IcoSeo class="w-full" />
+    </ServiceCard>
+    <ServiceCard
+    title="Velocidad de carga"
+    text="Afecta tanto la experiencia del usuario como el ranking en los motores de búsqueda. Esto retiene a los visitantes y aumenta la tasa de conversión.">
+        <IcoVelocidad class="w-full" />
+    </ServiceCard>
+    <ServiceCard
+    title="Hosting & Dominio"
+    text="Esenciales para establecer una identidad digital profesional y asegurar la presencia en línea.">
+        <IcoHosting class="w-full" />
+    </ServiceCard>
+    <ServiceCard
+    title="Accesibilidad"
+    text="Tener páginas accesibles para personas con capacidades diferentes amplía el alcance del sitio.">
+        <IcoAccesibilidad class="w-full" />
+    </ServiceCard>
+</section>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    }
+</style>
