@@ -19,8 +19,8 @@ const { number, titleFront, titleBack, href, linkText } = Astro.props;
       <h2 class="title w-3/5 text-[var(--secondary)]">{titleFront}</h2>
     </div>
     <div class="col-start-1 col-end-2 row-start-1 row-end-2 h-full grid place-content-center translate-y-full duration-500 py-5 px-4">
-      <h2 class="title text-center text-[var(--gold-back)]">{titleBack}</h2>
-      <ul class="flex flex-col text-center items-center py-8 gap-4">
+      <h2 class="title text-center text-[var(--gold)]">{titleBack}</h2>
+      <ul class="flex flex-col text-center text-[var(--secondary)] items-center py-8 gap-4">
         <slot class="text-font text-[var(--primary)] m-2" />
       </ul>
       <BtnTransparent href={href} text={linkText} />
