@@ -1,0 +1,66 @@
+---
+import ProductCard from "@/ui_complements/Product-Card.astro";
+
+
+---
+
+<section id="products" class="flex relative lg:top-32 h-[400px] w-full max-w-[1080px] overflow-hidden mx-auto">
+    <video class="absolute h-full w-full object-cover z-0" src="https://videos.pexels.com/video-files/852423/852423-hd_1280_720_24fps.mp4" autoplay loop muted></video>
+    <div class="sliderContainer inline-block md:flex max-w-[1080px] w-full mx-auto h-full relative overflow-scroll snap-y snap-mandatory lg:overflow-hidden">
+        <ProductCard
+        number="1"
+        titleFront="Landing Pages"
+        titleBack="Landings"
+        href="#"
+        linkText="Descubre más"
+        >
+            <p>Experiencia y diseño único</p>
+            <p>Analítica integrada</p>
+            <p>Compatibilidad móvil</p>
+            <p>Llamadas a la acción efectivas</p>
+        </ProductCard>
+        <ProductCard
+        number="2"
+        titleFront="Invitaciones para  eventos"
+        titleBack="Eventos"
+        href="#"
+        linkText="Descubre más"
+        >
+            <p>Experiencia y diseño único</p>
+            <p>Analítica integrada</p>
+            <p>Navegación fácil e intuitiva</p>
+            <p>Compatibilidad móvil</p>
+        </ProductCard>
+        <ProductCard
+        number="3"
+        titleFront="Aplicaciones web"
+        titleBack="Aplicaciones"
+        href="#"
+        linkText="Descubre más"
+        >
+            <p>Analítica integrada</p>
+            <p>Navegación fácil e intuitiva</p>
+            <p>Compatibilidad móvil</p>
+            <p>Llamadas a la acción efectivas</p>
+        </ProductCard>
+        <ProductCard
+        number="4"
+        titleFront="Páginas web"
+        titleBack="Páginas"
+        href="#"
+        linkText="Descubre más"
+        >
+            <p>Experiencia y diseño único</p>
+            <p>Navegación fácil e intuitiva</p>
+            <p>Compatibilidad móvil</p>
+            <p>Llamadas a la acción efectivas</p>
+        </ProductCard>
+    </div>
+</section>
+
+<style>
+    .sliderContainer::-webkit-scrollbar {
+        display: none;
+    }
+    
+</style>
