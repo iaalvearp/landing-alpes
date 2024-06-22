@@ -5,19 +5,19 @@ import Logo from "@/ui_complements/Logo.astro";
 ---
 
 <section class="relative h-[928px] w-full max-w-[1080px] lg:top-32 m-auto">
-    <form class="h-[520px] w-[343px] md:w-4/5 lg:w-[736px] relative top-40 mx-auto bg-[var(--overlay-strong)] flex flex-col md:flex-row items-center justify-between md:justify-evenly py-12 px-6 md:p-0 rounded" method="post">
+    <form class="h-[520px] w-[343px] md:w-4/5 lg:w-[736px] relative top-40 mx-auto bg-[var(--overlay)] flex flex-col md:flex-row items-center justify-between md:justify-evenly py-12 px-6 md:p-0 rounded" method="post">
         <div class="grid gap-4 md:flex md:flex-col md:justify-center items-center md:w-2/4">
             <Logo class="w-32 h-auto aspect-square text-[var(--secondary)] mx-auto"/>
             <p class="w-36 text-center md:text-left text-[var(--secondary)] md:text-xl md:w-44">No te conformes con plantillas</p>
         </div>
         <div class="grid justify-items-center gap-8 md:flex md:flex-col md:justify-center md:items-center md:w-2/4">
             <label for="name">
-                <input class="pl-4 bg-transparent border-b text-[var(--secondary)] border-[var(--overlay-dark)] outline-0 focus:border-[var(--secondary)] text-center md:text-left" type="text" name="name" id="name" placeholder="NOMBRE">
+                <input class="pl-4 bg-transparent border-b text-[var(--secondary)] border-[var(--overlay-dark)] outline-0 focus:border-[var(--secondary)] focus:border-b-2 duration-100 text-center md:text-left" type="text" name="name" id="name" placeholder="NOMBRE">
             </label>
             <label for="email">
-                <input class="pl-4 bg-transparent border-b text-[var(--secondary)] border-[var(--overlay-dark)] outline-0 focus:border-[var(--secondary)] text-center md:text-left" type="email" name="email" id="email" placeholder="EMAIL">
+                <input class="pl-4 bg-transparent border-b text-[var(--secondary)] border-[var(--overlay-dark)] outline-0 focus:border-[var(--secondary)] focus:border-b-2 duration-100 text-center md:text-left" type="email" name="email" id="email" placeholder="EMAIL">
             </label>
-            <button class="btn-font block px-8 py-2 hover:bg-[var(--primary)] bg-[var(--secondary)] hover:text-[var(--secondary)] text-[var(--primary)] font-medium duration-300 rounded uppercase" type="submit">Impulsa tu negocio</button>
+            <button class="block px-8 py-2 hover:bg-[var(--primary)] bg-[var(--secondary)] hover:text-[var(--secondary)] text-[var(--primary)] text-base font-medium duration-300 rounded uppercase" type="submit">Impulsa tu negocio</button>
         </div>
     </form>
 </section>
@@ -25,5 +25,8 @@ import Logo from "@/ui_complements/Logo.astro";
 <style>
     form {
         backdrop-filter: blur(4px);
+    }
+    input::placeholder {
+        color: var(--text-secondary);
     }
 </style>
