@@ -81,6 +81,25 @@ const { title, description } = Astro.props;
 		font-size: 1rem;
 	}
 
+	.floating-menu {
+		animation: floating-menu linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0 128px;
+	}
+
+	@keyframes floating-menu {
+		to {
+			top: 1rem;
+			background-color: var(--overlay-dark);
+			backdrop-filter: blur(6px);
+			color: var(--primary);
+			border-radius: 9999px;
+			width: 90%;
+			margin: 0 auto;
+			padding: ;
+		}
+	}
+
 	@media (width >= 768px) {
 		.title {
 			font-size: 1.5rem;
@@ -90,6 +109,11 @@ const { title, description } = Astro.props;
 		}
 		.btn-font {
 			font-size: 1.25rem;
+		}
+		@keyframes floating-menu {
+			to {
+				width: 80%;
+			}
 		}
 	}
 
