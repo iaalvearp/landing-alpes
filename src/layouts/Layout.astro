@@ -96,7 +96,6 @@ const { title, description } = Astro.props;
 			border-radius: 9999px;
 			width: 90%;
 			margin: 0 auto;
-			padding: ;
 		}
 	}
 
@@ -112,7 +111,13 @@ const { title, description } = Astro.props;
 		}
 		@keyframes floating-menu {
 			to {
-				width: 80%;
+				top: 1rem;
+			background-color: var(--overlay-dark);
+			backdrop-filter: blur(6px);
+			color: var(--primary);
+			border-radius: 9999px;
+			width: 80%;
+			margin: 0 auto;
 			}
 		}
 	}
