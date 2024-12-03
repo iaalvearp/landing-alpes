@@ -14,7 +14,7 @@ const { number, titleFront, titleBack, href, linkText } = Astro.props;
 
 <article class="w-full md:min-w-[270px] lg:w-full h-full min-h-[400px] grid grid-cols-1 grid-rows-1 aspect-[10/16] snap-center overflow-hidden duration-500">
     <div class="col-start-1 col-end-2 row-start-1 row-end-2 h-full flex flex-col items-center text-center translate-y-0 bg-[var(--overlay-strong)] pt-[35%] lg:pt-[55%] duration-500">
-      <p class="title px-4 lg:px-5 bg-[var(--secondary)] text-[var(--gold-back)] rounded-sm">{number}</p>
+      <p class="title px-4 lg:px-5 bg-[var(--secondary)] text-[var(--gold-back)]">{number}</p>
       <div class="w-[2px] h-6 bg-[var(--secondary)] my-2"></div>
       <h2 class="title w-3/5 text-[var(--secondary)]">{titleFront}</h2>
     </div>

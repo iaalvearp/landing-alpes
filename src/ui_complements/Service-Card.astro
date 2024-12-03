@@ -10,7 +10,7 @@ interface Props {
 const { title, text, href } = Astro.props;
 ---
 
-<article class="grid w-full max-w-80 items-center py-2 px-3 grid-cols-[1fr_2.5rem] grid-rows-[2.5rem_1fr] rounded mx-auto duration-300 overflow-hidden">
+<article class="grid w-full max-w-80 items-center py-2 px-3 grid-cols-[1fr_2.5rem] grid-rows-[2.5rem_1fr] mx-auto duration-300 overflow-hidden">
     <h2 class="title col-start-1 col-end-2 row-start-1 row-end-2 cursor-default duration-300">{title}</h2>
     <p class="text-font text-[var(--text-secondary)] col-start-1 col-end-2 row-start-2 row-end-3 cursor-default duration-300">{text}</p>
     <slot class="col-start-2 col-end-3 row-start-1 row-end-2 w-full h-auto" />
