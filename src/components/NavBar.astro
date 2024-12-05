@@ -3,21 +3,55 @@ import ToggleBtn from "@/ui_complements/Toggle-Btn.astro"
 import Logo from "@/ui_complements/Logo.astro"
 ---
 
-<nav id="floatingNav" class="absolute text-[var(--secondary)] z-50">
-    <div class="top-0 lg:top-32 h-20 w-full max-w-[1080px] py-6 lg:py-5 px-[5%] lg:px-4 mx-auto left-0 right-0 md:py-4 flex justify-between">
+<nav id="rootMenu" class="relative w-full h-max top-0 lg:top-32 text-[var(--secondary)] z-50">
+    <div id="floatingNav" class="absolute h-20 w-full max-w-[1080px] py-6 lg:py-5 px-[5%] lg:px-4 mx-auto left-0 right-0 md:py-4 flex justify-between duration-300">
         <Logo class="h-full w-auto text-current duration-300" />
         <ToggleBtn 
         class="h-full w-auto cursor-pointer text-current hover:text-[var(--gold)] active:scale-90 duration-300"/>
     </div>
 </nav>
 
+<style>
+    .floatingMenu {
+        width: 90%;
+        position: fixed;
+        background-color: var(--overlay-dark);
+        backdrop-filter: blur(4px);
+        color: var(--primary);
+        top: 1rem;
+    }
+</style>
+
 
 <script>
     const floatingNav = document.getElementById('floatingNav')
-    const options = {}
-    const observer = new IntersectionObserver(callback, options)
-
-    function callback () {
-
+    const servicesSection = document.getElementById('services')
+    const rootViewportMenu = document.getElementById('rootMenu')
+    const optionsFix = {
+        root: null,
+        threshold: 0.1
     }
+    const optionsMenu = {
+        root: null,
+        threshold: 0.9
+    }
+
+    function menuFixed (e) {
+        if(e[0].target.id === 'services') {
+            floatingNav.classList.add('floatingMenu')
+        }
+    }
+
+    function quitMenu (e) {
+        if(e[0].target.id === 'rootMenu') {
+            floatingNav.classList.remove('floatingMenu')
+        }
+    }
+
+    let observerSection = new IntersectionObserver(menuFixed, optionsFix)
+    let observeMenu = new IntersectionObserver(quitMenu, optionsMenu)
+    
+    observerSection.observe(servicesSection)
+    observeMenu.observe(rootViewportMenu)
+    
 </script>
