@@ -20,6 +20,7 @@ import Logo from "@/ui_complements/Logo.astro"
         color: var(--primary);
         top: 1rem;
         transition-duration: 500ms;
+        border-radius: 9999px;
     }
     
     @media (width > 767px) {
@@ -32,7 +33,9 @@ import Logo from "@/ui_complements/Logo.astro"
             backdrop-filter: blur(4px);
             color: var(--primary);
             top: 1rem;
+            padding: 1.25rem 2rem;
             transition-duration: 500ms;
+            border-radius: 9999px;
         }
     }
 
@@ -45,7 +48,7 @@ import Logo from "@/ui_complements/Logo.astro"
     const rootViewportMenu = document.getElementById('home')
     const optionsFix = {
         root: null,
-        threshold: 0.89
+        threshold: 0.8
     }
 
     function menuFixed (e) {
