@@ -3,8 +3,8 @@ import ToggleBtn from "@/ui_complements/Toggle-Btn.astro"
 import Logo from "@/ui_complements/Logo.astro"
 ---
 
-<nav id="rootMenu" class="relative w-full h-max top-0 lg:top-32 text-[var(--secondary)] z-50">
-    <div id="floatingNav" class="absolute h-20 w-full max-w-[1080px] py-6 lg:py-5 px-[5%] lg:px-4 mx-auto left-0 right-0 md:py-4 flex justify-between duration-300">
+<nav id="rootMenu" class="relative w-full h-max lg:h-20 top-0 lg:top-52 text-[var(--secondary)] z-50">
+    <div id="floatingNav" class="absolute h-20 w-full max-w-[1080px] py-6 lg:py-5 px-[5%] lg:px-4 mx-auto left-0 right-0 md:py-4 flex justify-between duration-500">
         <Logo class="h-full w-auto text-current duration-300" />
         <ToggleBtn 
         class="h-full w-auto cursor-pointer text-current hover:text-[var(--gold)] active:scale-90 duration-300"/>
@@ -19,39 +19,45 @@ import Logo from "@/ui_complements/Logo.astro"
         backdrop-filter: blur(4px);
         color: var(--primary);
         top: 1rem;
+        transition-duration: 500ms;
     }
+    
+    @media (width > 767px) {
+        .floatingMenu {
+            width: 80%;
+            max-width: 980px;
+            margin: 0 auto;
+            position: fixed;
+            background-color: var(--overlay-dark);
+            backdrop-filter: blur(4px);
+            color: var(--primary);
+            top: 1rem;
+            transition-duration: 500ms;
+        }
+    }
+
 </style>
 
 
 <script>
     const floatingNav = document.getElementById('floatingNav')
     const servicesSection = document.getElementById('services')
-    const rootViewportMenu = document.getElementById('rootMenu')
+    const rootViewportMenu = document.getElementById('home')
     const optionsFix = {
         root: null,
-        threshold: 0.1
-    }
-    const optionsMenu = {
-        root: null,
-        threshold: 0.9
+        threshold: 0.89
     }
 
     function menuFixed (e) {
-        if(e[0].target.id === 'services') {
+        if(e[0].isIntersecting) {
+            floatingNav.classList.remove('floatingMenu')
+        } else {
             floatingNav.classList.add('floatingMenu')
         }
     }
 
-    function quitMenu (e) {
-        if(e[0].target.id === 'rootMenu') {
-            floatingNav.classList.remove('floatingMenu')
-        }
-    }
-
     let observerSection = new IntersectionObserver(menuFixed, optionsFix)
-    let observeMenu = new IntersectionObserver(quitMenu, optionsMenu)
     
-    observerSection.observe(servicesSection)
-    observeMenu.observe(rootViewportMenu)
+    observerSection.observe(rootViewportMenu)
     
 </script>
