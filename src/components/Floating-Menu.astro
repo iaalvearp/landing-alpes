@@ -2,13 +2,14 @@
 import BtnAction from "@/ui_complements/Btn-Action.astro";
 import Fb from "@/ui_complements/Fb.astro";
 import Ig from "@/ui_complements/Ig.astro";
-
-
 ---
 
-<div class="w-4/5 max-w-72 h-full max-h-[768px] relative lg:top-32" >
-    <ul>
-        <slot />
+<div class="cristal w-[90%] max-w-80 h-[90%] max-h-[768px] fixed lg:hidden left-0 right-0 lg:left-[unset] mx-auto top-0 lg:top-32 z-50 text-center bg-[var(--overlay-strong)] flex flex-col justify-center items-center gap-8" >
+    <ul class="flex flex-col w-full">
+        <a class="py-4 text-center text-xl lg:text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#hero">Inicio</a>
+        <a class="py-4 text-center text-xl lg:text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#services">Servicios</a>
+        <a class="py-4 text-center text-xl lg:text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#products">Productos</a>
+        <a class="py-4 text-center text-xl lg:text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#contact">Contacto</a>
     </ul>
     <BtnAction
     href="#" 
@@ -23,3 +24,9 @@ import Ig from "@/ui_complements/Ig.astro";
         </a>
     </div>
 </div>
+
+<style>
+    .cristal {
+        backdrop-filter: blur(4px);
+    }
+</style>

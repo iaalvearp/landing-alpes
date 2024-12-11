@@ -2,9 +2,10 @@
 interface Props {
     href: string,
     text: string,
+    id?: string
 }
 
-const { href, text } = Astro.props;
+const { href, text, id } = Astro.props;
 ---
 
-<a target="_blank" class="btn-font block px-8 py-2 bg-[var(--primary)] border border-[var(--secondary)] hover:bg-[var(--secondary)] text-[var(--secondary)] hover:text-[var(--primary)] font-medium duration-300" href={href}>{text}</a>
+<a id={ id } target="_blank" class="btn-font block px-8 py-2 bg-[var(--primary)] border border-[var(--secondary)] hover:bg-[var(--secondary)] text-[var(--secondary)] hover:text-[var(--primary)] font-medium duration-300" href={href}>{text}</a>
