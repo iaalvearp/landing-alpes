@@ -4,12 +4,12 @@ import Fb from "@/ui_complements/Fb.astro";
 import Ig from "@/ui_complements/Ig.astro";
 ---
 
-<div class="cristal w-[90%] max-w-80 h-[90%] max-h-[768px] fixed lg:hidden left-0 right-0 lg:left-[unset] mx-auto top-0 lg:top-32 z-50 text-center bg-[var(--overlay-strong)] flex flex-col justify-center items-center gap-8" >
+<div id="mobileMenu" class="cristal w-full h-full fixed lg:hidden left-0 right-0 lg:left-[unset] mx-auto top-0 bottom-0 z-50 text-center bg-[var(--overlay-strong)] flex flex-col justify-center items-center gap-8 -translate-y-full duration-300" >
     <ul class="flex flex-col w-full">
-        <a class="py-4 text-center text-xl lg:text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#hero">Inicio</a>
-        <a class="py-4 text-center text-xl lg:text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#services">Servicios</a>
-        <a class="py-4 text-center text-xl lg:text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#products">Productos</a>
-        <a class="py-4 text-center text-xl lg:text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#contact">Contacto</a>
+        <a class="mobileMenuBtn py-4 text-center text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#hero">Inicio</a>
+        <a class="mobileMenuBtn py-4 text-center text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#services">Servicios</a>
+        <a class="mobileMenuBtn py-4 text-center text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#products">Productos</a>
+        <a class="mobileMenuBtn py-4 text-center text-3xl text-[var(--text-secondary)] hover:text-[var(--gold)]" href="#contact">Contacto</a>
     </ul>
     <BtnAction
     href="#" 
@@ -27,6 +27,13 @@ import Ig from "@/ui_complements/Ig.astro";
 
 <style>
     .cristal {
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(5px);
     }
 </style>
+
+<script>
+    const btns = document.querySelectorAll('.mobileMenuBtn')
+    const mobileMenu = document.getElementById('mobileMenu')
+
+    btns.forEach(btn => btn.addEventListener('click', ()=> mobileMenu.classList.toggle('showMenu')))
+</script>
