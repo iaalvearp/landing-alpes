@@ -1,7 +1,4 @@
 ---
-import '@fontsource/poppins/400.css';
-import '@fontsource/poppins/500.css';
-import '@fontsource/sedan-sc';
 interface Props {
 	title: string;
 	description: string;
@@ -67,24 +64,34 @@ const { title, description } = Astro.props;
 		--text-secondary: rgba(34, 34, 34, 0.7);
 	}
 
+	@font-face {
+		font-family: 'Montserrat';
+		src: url('/fonts/Montserrat.ttf');
+	}
+
+	@font-face {
+		font-family: 'SedanSC';
+		src: url('/fonts/SedanSC.ttf');
+	}
+
 	html {
 		scroll-behavior: smooth;
 	}
 
 	.title {
-		font-family: var(--title-font), serif;
+		font-family: 'SedanSC', serif;
 		font-size: 1.25rem;
 		text-wrap: balance
 	}
 
 	.text-font {
-		font-family: var(--text-font), sans-serif;
+		font-family: 'Montserrat', sans-serif;
 		font-size: 0.75rem;
 		text-wrap: pretty;
 	}
 
 	.btn-font {
-		font-family: var(--text-font), sans-serif;
+		font-family: 'Montserrat', sans-serif;
 		font-size: 1rem;
 	}
 
