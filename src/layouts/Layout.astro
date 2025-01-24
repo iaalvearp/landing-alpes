@@ -25,6 +25,40 @@ const { title, description } = Astro.props;
 	}
 
 	document.addEventListener('DOMContentLoaded', colorSchemePreference)
+
+	const floatingNav = document.getElementById('floatingNav')
+    const mobileMenu = document.getElementById('mobileMenu')
+    const rootViewportMenu = document.getElementById('rootMenu')
+    const btnMenu = document.getElementById('toggleBtn')
+    const optionsFix = {
+        root: null,
+        threshold: .8
+    }
+
+    function menuFixed (e) {
+        if(e[0].isIntersecting) {
+            floatingNav.classList.remove('floatingMenu')
+        } else {
+            floatingNav.classList.add('floatingMenu')
+        }
+    }
+
+    let observerSection = new IntersectionObserver(menuFixed, optionsFix)
+    
+    observerSection.observe(rootViewportMenu)
+
+    btnMenu.addEventListener('click', ()=>{
+         mobileMenu.classList.toggle('showMenu')
+         console.log(mobileMenu)
+    })
+
+	const btns = document.querySelectorAll('.mobileMenuBtn')
+
+    btns.forEach(btn => btn.addEventListener('click', ()=> {
+            console.log(mobileMenu)
+            mobileMenu.classList.toggle('showMenu')
+        }))
+
 </script>
 
 <!doctype html>
