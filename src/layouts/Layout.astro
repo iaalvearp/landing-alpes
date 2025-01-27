@@ -30,6 +30,7 @@ const { title, description } = Astro.props;
     const mobileMenu = document.getElementById('mobileMenu')
     const rootViewportMenu = document.getElementById('rootMenu')
     const btnMenu = document.getElementById('toggleBtn')
+	const btns = document.querySelectorAll('.mobileMenuBtn')
     const optionsFix = {
         root: null,
         threshold: .8
@@ -47,17 +48,10 @@ const { title, description } = Astro.props;
     
     observerSection.observe(rootViewportMenu)
 
-    btnMenu.addEventListener('click', ()=>{
-         mobileMenu.classList.toggle('showMenu')
-         console.log(mobileMenu)
-    })
+    btnMenu.addEventListener('click', ()=> mobileMenu.classList.toggle('showMenu'))
 
-	const btns = document.querySelectorAll('.mobileMenuBtn')
 
-    btns.forEach(btn => btn.addEventListener('click', ()=> {
-            console.log(mobileMenu)
-            mobileMenu.classList.toggle('showMenu')
-        }))
+    btns.forEach(btn => btn.addEventListener('click', ()=> mobileMenu.classList.toggle('showMenu')))
 
 </script>
 
