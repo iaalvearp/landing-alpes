@@ -1,0 +1,142 @@
+---
+interface Props {
+    title: string,
+    description: string
+}
+
+const { title, description } = Astro.props; 
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content= { description } />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+		<title> { title } </title>
+	</head>
+	<body >
+		<main id="hero" class="w-full min-h-screen relative lg:pb-32">
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--text-font: 'Poppins';
+		--title-font: 'Sedan SC';
+		--size-text: 0.75rem;
+		--size-text-desk: 1rem;
+		--size-medium: 1rem;
+		--size-medium-desk: 1.25rem;
+		--size-title: 1.25rem;
+		--size-title-desk: 1.5rem;
+		--primary: rgb(255, 255, 255);
+		--secondary: rgb(34, 34 ,34);
+		--gold: rgb(168, 123, 5);
+		--gold-back: rgb(239, 184, 16);
+		--overlay: rgba(255, 255, 255, 0.3);
+		--overlay-strong: rgba(255, 255, 255, 0.6);
+		--overlay-dark: rgba(34, 34, 34, 0.3);
+		--text-secondary: rgba(34, 34, 34, 0.7);
+	}
+
+	@font-face {
+		font-family: 'Montserrat';
+		src: url('/fonts/Montserrat.ttf');
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'SedanSC';
+		src: url('/fonts/SedanSC.ttf');
+		font-display: swap;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	.title {
+		font-family: 'SedanSC', serif;
+		font-size: 1.25rem;
+		text-wrap: balance
+	}
+
+	.text-font-header {
+		font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+		font-size: 0.75rem;
+	}
+
+	.text-font {
+		font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+		font-size: 0.75rem;
+		text-wrap: pretty;
+	}
+
+	.btn-font {
+		font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+		font-size: 1rem;
+	}
+
+	.floating-menu {
+		animation: floating-menu linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0 128px;
+	}
+
+	@keyframes floating-menu {
+		to {
+			top: 1rem;
+			background-color: var(--overlay-dark);
+			backdrop-filter: blur(6px);
+			color: var(--primary);
+			border-radius: 9999px;
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+
+	@media (width >= 768px) {
+		.title {
+			font-size: 1.5rem;
+		}
+		.text-font {
+			font-size: 1rem;
+		}
+		.text-font-header {
+			font-size: 1.25rem;
+		}
+		.btn-font {
+			font-size: 1.25rem;
+		}
+		@keyframes floating-menu {
+			to {
+				top: 1rem;
+			background-color: var(--overlay-dark);
+			backdrop-filter: blur(6px);
+			color: var(--primary);
+			border-radius: 9999px;
+			width: 80%;
+			margin: 0 auto;
+			}
+		}
+	}
+
+
+	@media(prefers-color-scheme:dark) {
+		:root {
+			--primary: rgb(34, 34 ,34);
+			--secondary: rgb(255, 255, 255);
+			--gold: rgb(239, 184, 16);
+			--gold-back: rgb(168, 123, 5);
+			--overlay: rgba(34, 34, 34, 0.3);
+			--overlay-strong: rgba(34, 34, 34, 0.7);
+			--text-secondary: rgba(255, 255, 255, 0.7);
+			--overlay-dark: rgba(255, 255, 255, 0.3);
+		}
+	}
+
+</style>
