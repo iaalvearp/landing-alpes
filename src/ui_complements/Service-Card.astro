@@ -5,19 +5,25 @@ interface Props {
     title: string,
     text: string,
     href?: string,
-    id?: string
+    id?: string,
+    textOneBack: string,
+    textTwoBack: string
 }
 
-const { title, text, href, id } = Astro.props;
+const { title, text, href, id, textOneBack, textTwoBack } = Astro.props;
 ---
 
-<article id={ id } class="grid w-full max-w-80 items-center py-2 px-3 grid-cols-[1fr_2.5rem] grid-rows-[2.5rem_1fr] mx-auto hover:scale-105 hover:cursor-pointer duration-300 overflow-hidden">
-    <h2 class="title col-start-1 col-end-2 row-start-1 row-end-2 duration-300">{title}</h2>
-    <p class="text-font text-[var(--text-secondary)] col-start-1 col-end-2 row-start-2 row-end-3 duration-300">{text}</p>
-    <slot class="col-start-2 col-end-3 row-start-1 row-end-2 w-full h-auto" />
-    <a href={href} class="h-full flex items-center col-start-2 col-end-3 row-start-2 row-end-3 translate-y-[150%] duration-500 m-auto">
-        <Arrow />
-    </a>
+<article id={ id } class="w-full relative max-w-80 items-center py-2 px-3 mx-auto hover:cursor-pointer duration-300 overflow-hidden">
+    <div class="front w-full h-full grid grid-cols-[1fr_2.5rem] grid-rows-[2.5rem_1fr]">
+        <h2 class="title text-[var(--gold)] col-start-1 col-end-2 row-start-1 row-end-2 duration-300">{title}</h2>
+        <p class="text-font text-[var(--text-secondary)] col-start-1 col-end-2 row-start-2 row-end-3 duration-300">{text}</p>
+        <slot class="col-start-2 col-end-3 row-start-1 row-end-2 w-full h-auto" />
+    </div>
+    <div class="back absolute grid place-content-center items-center justify-center w-full h-full inset-0 bg-[var(--primary)]">
+        <p class="text-font text-[var(--secondary)] py-2 px-3 mx-auto"> { textOneBack } </p>
+        <span class="block h-[1px] w-1/4 bg-[var(--gold)] mx-auto"></span>
+        <p class="text-font text-[var(--secondary)] py-2 px-3 mx-auto"> { textTwoBack } </p>
+    </div>
     
 </article>
 
@@ -31,10 +37,24 @@ const { title, text, href, id } = Astro.props;
     article:hover a {
         transform: translateY(0);
     }
-    article:hover h2 {
-        color: var(--gold);
-    }
     article:hover p {
         color: var(--secondary);
+    }
+    .front, .back {
+        backface-visibility: hidden;
+    }
+    .front {
+        transform: perspective(30rem) rotateY(0deg);
+        transition: transform 1s;
+    }
+    .back {
+        transform: perspective(30rem) rotateY(180deg);
+        transition: transform 1s;
+    }
+    article:hover .front {
+        transform: perspective(30rem) rotateY(180deg);
+    }
+    article:hover .back {
+        transform: perspective(30rem) rotateY(360deg);
     }
 </style>
