@@ -13,16 +13,16 @@ interface Props {
 const { title, text, href, id, textOneBack, textTwoBack } = Astro.props;
 ---
 
-<article id={ id } class="w-full relative max-w-80 items-center py-2 px-3 mx-auto hover:cursor-pointer duration-300 overflow-hidden">
+<article id={ id } class="w-full relative max-w-80 items-center py-2 px-3 mx-auto hover:cursor-default hover:scale-105 duration-300 overflow-hidden">
     <div class="front w-full h-full grid grid-cols-[1fr_2.5rem] grid-rows-[2.5rem_1fr]">
         <h2 class="title text-[var(--gold)] col-start-1 col-end-2 row-start-1 row-end-2 duration-300">{title}</h2>
         <p class="text-font text-[var(--text-secondary)] col-start-1 col-end-2 row-start-2 row-end-3 duration-300">{text}</p>
         <slot class="col-start-2 col-end-3 row-start-1 row-end-2 w-full h-auto" />
     </div>
     <div class="back absolute grid place-content-center items-center justify-center w-full h-full inset-0 bg-[var(--primary)]">
-        <p class="text-font text-[var(--secondary)] py-2 px-3 mx-auto"> { textOneBack } </p>
+        <p class="text-font text-[var(--secondary)] py-2 px-3 mx-auto text-pretty"> { textOneBack } </p>
         <span class="block h-[1px] w-1/4 bg-[var(--gold)] mx-auto"></span>
-        <p class="text-font text-[var(--secondary)] py-2 px-3 mx-auto"> { textTwoBack } </p>
+        <p class="text-font text-[var(--secondary)] py-2 px-3 mx-auto text-pretty"> { textTwoBack } </p>
     </div>
     
 </article>
