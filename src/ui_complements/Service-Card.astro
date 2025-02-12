@@ -13,7 +13,7 @@ interface Props {
 const { title, text, href, id, textOneBack, textTwoBack } = Astro.props;
 ---
 
-<article id={ id } class="w-full relative max-w-80 items-center py-2 px-3 mx-auto hover:cursor-default hover:scale-105 duration-300 overflow-hidden">
+<article id={ id } class="w-full relative max-w-80 items-center py-2 px-3 mx-auto hover:cursor-default hover:scale-105 duration-1000 overflow-hidden">
     <div class="front w-full h-full grid grid-cols-[1fr_2.5rem] grid-rows-[2.5rem_1fr]">
         <h2 class="title text-[var(--gold)] col-start-1 col-end-2 row-start-1 row-end-2 duration-300">{title}</h2>
         <p class="text-font text-[var(--text-secondary)] col-start-1 col-end-2 row-start-2 row-end-3 duration-300">{text}</p>
@@ -45,11 +45,11 @@ const { title, text, href, id, textOneBack, textTwoBack } = Astro.props;
     }
     .front {
         transform: perspective(30rem) rotateY(0deg);
-        transition: transform 1s;
+        transition: transform 800ms;
     }
     .back {
         transform: perspective(30rem) rotateY(180deg);
-        transition: transform 1s;
+        transition: transform 800ms;
     }
     article:hover .front {
         transform: perspective(30rem) rotateY(180deg);
